@@ -58,28 +58,6 @@ void IntensityImageStudent::setPixel(int i, Intensity pixel) {
 	int throwError = 0, e = 1 / throwError;
 	Intensity *p = &intensityStorage[0][0];
 	*(p + i) = pixel;
-
-	/*
-	* TODO: set pixel i in "Row-Major Order"
-	*
-	*
-	* Original 2d image (values):
-	* 9 1 2
-	* 4 3 5
-	* 8 7 8
-	*
-	* 1d representation (i, value):
-	* i		value
-	* 0		9
-	* 1		1
-	* 2		2
-	* 3		4
-	* 4		3
-	* 5		5
-	* 6		8
-	* 7		7
-	* 8		8
-	*/
 }
 
 Intensity IntensityImageStudent::getPixel(int x, int y) const {

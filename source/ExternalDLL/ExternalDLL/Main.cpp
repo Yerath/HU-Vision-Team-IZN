@@ -56,9 +56,10 @@ int main(int argc, char * argv[]) {
 
 	
 
-	input->getPixel(0, 0);
-	input->setPixel(0, RGB(0, 0, 0));
-	input->getPixel(0, 0);
+	input->getPixel(0, 10);
+	input->setPixel(10, RGB(2, 0, 0));
+	input->getPixel(0, 10);
+	input->getPixel(10);
 
 	system("pause");
 }
