@@ -24,7 +24,7 @@ public:
 	RGB getPixel(int x, int y) const;
 	RGB getPixel(int i) const;
 
-	IntensityImageStudent RGBGRAY();
+	IntensityImageStudent & RGBGRAY();
 private:
 	int swidth;
 	int sheight;

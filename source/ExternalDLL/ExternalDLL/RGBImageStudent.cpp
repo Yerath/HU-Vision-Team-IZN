@@ -90,16 +90,17 @@ RGB RGBImageStudent::getPixel(int i) const {
 	return 0;
 }
 
-IntensityImageStudent RGBImageStudent::RGBGRAY() {
-	IntensityImageStudent ss;
-	ss.set(swidth, sheight);
+IntensityImageStudent & RGBImageStudent::RGBGRAY() {
+	IntensityImageStudent *ss = new IntensityImageStudent;
+	ss->set(swidth, sheight);
 
 	for (int i = 0; i < swidth; ++i)
 		for (int j = 0; j < sheight; ++j){
-			RGB *p = &rgbStorage[swidth][sheight];
-			Intensity x = 0.2989*(p->r) + 0.5870*(p->g) + 0.1140*(p->b);
-			ss.setPixel(swidth, sheight, x);
+			RGB p = rgbStorage[i][j];
+			
+			Intensity x = 0.2989 * (p.r) + 0.5870 * (p.g) + 0.1140 * (p.b);
+			ss->setPixel(swidth, sheight, x);
 		}
-	return ss;
+	return *ss;
 
 }

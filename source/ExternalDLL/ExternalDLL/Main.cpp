@@ -30,7 +30,7 @@ int main(int argc, char * argv[]) {
 	}
 
 
-	ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
+	//ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
 
 	//DLLExecution * executor = new DLLExecution(input);
 
@@ -60,7 +60,11 @@ int main(int argc, char * argv[]) {
 	////input->setPixel(10, RGB(2, 0, 0));
 	//input->getPixel(0, 10);
 	//input->getPixel(10);
-	//(RGBImageStudent)input->RGBGRAY();
+	//;
+	ImageIO::saveIntensityImage(static_cast<RGBImageStudent*>(input)->RGBGRAY(), ImageIO::getDebugFileName("debug.png"));
+	//ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
+
+
 
 	system("pause");
 }

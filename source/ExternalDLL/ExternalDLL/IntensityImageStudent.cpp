@@ -2,29 +2,29 @@
 #include <iostream>
 
 IntensityImageStudent::IntensityImageStudent() : IntensityImage() {
-	int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
+	//int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
 	//TODO: Nothing
 }
 
 IntensityImageStudent::IntensityImageStudent(const IntensityImageStudent &other) : IntensityImage(other.getWidth(), other.getHeight()) , sWidth(other.getWidth()), sHeight(other.getHeight()){
-	int throwError = 0, e = 1 / throwError;
-
+	//int throwError = 0, e = 1 / throwError;
+	createStorage();
 }
 
 IntensityImageStudent::IntensityImageStudent(const int width, const int height) : IntensityImage(width, height), sWidth(width), sHeight(height) {
-	int throwError = 0, e = 1 / throwError;
+//	int throwError = 0, e = 1 / throwError;
 	createStorage();
 }
 
 IntensityImageStudent::~IntensityImageStudent() {
-	int throwError = 0, e = 1 / throwError;
+//	int throwError = 0, e = 1 / throwError;
 	//TODO: delete allocated objects
 	deleteStorage();
 }
 
 void IntensityImageStudent::set(const int width, const int height) {
 	IntensityImage::set(width, height);
-	int throwError = 0, e = 1 / throwError;
+//	int throwError = 0, e = 1 / throwError;
 
 	deleteStorage(); sWidth = width; sHeight = height;
 	createStorage();
@@ -33,7 +33,7 @@ void IntensityImageStudent::set(const int width, const int height) {
 
 void IntensityImageStudent::set(const IntensityImageStudent &other) {
 	IntensityImage::set(other.getWidth(), other.getHeight());
-	int throwError = 0, e = 1 / throwError;
+	//int throwError = 0, e = 1 / throwError;
 
 	deleteStorage(); sWidth = other.getWidth(); sHeight = other.getHeight();
 	createStorage();
@@ -46,7 +46,7 @@ void IntensityImageStudent::set(const IntensityImageStudent &other) {
 }
 
 void IntensityImageStudent::setPixel(int x, int y, Intensity pixel) {
-	int throwError = 0, e = 1 / throwError;
+	//int throwError = 0, e = 1 / throwError;
 
 	if (x > sWidth || y > sHeight)
 		std::cout << "Pixel out of range"; return;
@@ -55,13 +55,13 @@ void IntensityImageStudent::setPixel(int x, int y, Intensity pixel) {
 }
 
 void IntensityImageStudent::setPixel(int i, Intensity pixel) {
-	int throwError = 0, e = 1 / throwError;
+	//int throwError = 0, e = 1 / throwError;
 	Intensity *p = &intensityStorage[0][0];
 	*(p + i) = pixel;
 }
 
 Intensity IntensityImageStudent::getPixel(int x, int y) const {
-	int throwError = 0, e = 1 / throwError;
+	//int throwError = 0, e = 1 / throwError;
 	//TODO: no comment needed :)
 
 	if (x > sWidth || y > sHeight)
@@ -71,7 +71,7 @@ Intensity IntensityImageStudent::getPixel(int x, int y) const {
 }
 
 Intensity IntensityImageStudent::getPixel(int i) const {
-	int throwError = 0, e = 1 / throwError;
+	//int throwError = 0, e = 1 / throwError;
 	//TODO: see setPixel(int i, RGB pixel)
 
 	if (i > (sWidth * sHeight))
