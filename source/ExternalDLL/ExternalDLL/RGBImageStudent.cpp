@@ -109,8 +109,10 @@ void RGBImageStudent::setPixel(int i, RGB pixel) {
 	* 8		8
 	*/
 	//int x = i % swidth
-	RGB *arr2 = (RGB*)rgbStorage;
-	arr2[i] = pixel;
+
+	RGB *p = &rgbStorage[0][0];
+	*(p + i) = pixel;
+
 	//rgbStorage[swidth]
 }
 
