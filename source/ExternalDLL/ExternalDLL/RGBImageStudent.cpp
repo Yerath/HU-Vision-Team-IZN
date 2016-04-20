@@ -1,5 +1,6 @@
 #include "RGBImageStudent.h"
 #include <iostream>
+#include "ImageIO.h"
 
 RGBImageStudent::RGBImageStudent() : RGBImage() {
 	//int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
@@ -94,13 +95,18 @@ IntensityImageStudent & RGBImageStudent::RGBGRAY() {
 	IntensityImageStudent *ss = new IntensityImageStudent;
 	ss->set(swidth, sheight);
 
-	for (int i = 0; i < swidth; ++i)
+	for (int i = 0; i < swidth; ++i){
 		for (int j = 0; j < sheight; ++j){
 			RGB p = rgbStorage[i][j];
-			
+
 			Intensity x = 0.2989 * (p.r) + 0.5870 * (p.g) + 0.1140 * (p.b);
-			ss->setPixel(swidth, sheight, x);
+			//std::cout << "x:" << i << " y:" << j << " " << x << "\n";
+			ss->setPixel(i, j, x);
 		}
+	}
+	std::cout << (int)ss->getPixel(0, 0) << "dd\n";
+	ImageIO::showImage(*ss);
 	return *ss;
+	
 
 }

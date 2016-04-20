@@ -61,8 +61,12 @@ int main(int argc, char * argv[]) {
 	//input->getPixel(0, 10);
 	//input->getPixel(10);
 	//;
-	ImageIO::saveIntensityImage(static_cast<RGBImageStudent*>(input)->RGBGRAY(), ImageIO::getDebugFileName("debug.png"));
+	ImageIO::showImage(*input);
+	static_cast<RGBImageStudent*>(input)->RGBGRAY();
+	//std::cout << (int)test.getPixel(0,0) << "\n";
+	//5ImageIO::saveIntensityImage(test, ImageIO::getDebugFileName("debug.png"));
 	//ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
+	//ImageIO::showImage(test);
 
 
 
