@@ -56,10 +56,11 @@ int main(int argc, char * argv[]) {
 
 	
 
-	input->getPixel(0, 10);
-	input->setPixel(10, RGB(2, 0, 0));
-	input->getPixel(0, 10);
-	input->getPixel(10);
+	//input->getPixel(0, 10);
+	////input->setPixel(10, RGB(2, 0, 0));
+	//input->getPixel(0, 10);
+	//input->getPixel(10);
+	//(RGBImageStudent)input->RGBGRAY();
 
 	system("pause");
 }
