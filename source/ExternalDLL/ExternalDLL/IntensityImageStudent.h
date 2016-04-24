@@ -6,11 +6,13 @@
 
 #pragma once
 #include "IntensityImage.h"
+#include "RGBImageStudent.h"
 class IntensityImageStudent : public IntensityImage {
 public:
 	IntensityImageStudent();
 	IntensityImageStudent(const IntensityImageStudent &other);
 	IntensityImageStudent(const int width, const int height);
+	IntensityImageStudent(const RGBImage &rgbStudent);
 	~IntensityImageStudent();
 
 	void set(const int width, const int height);
@@ -26,6 +28,4 @@ public:
 	void deleteStorage();
 private:
 	Intensity** intensityStorage;
-	int sWidth;
-	int sHeight;
 };

@@ -10,6 +10,7 @@
 #include "ImageFactory.h"
 #include "DLLExecution.h"
 #include "RGBImageStudent.h"
+#include "IntensityImageStudent.h"
 
 void drawFeatureDebugImage(IntensityImage &image, FeatureMap &features);
 bool executeSteps(DLLExecution * executor);
@@ -61,8 +62,19 @@ int main(int argc, char * argv[]) {
 	//input->getPixel(0, 10);
 	//input->getPixel(10);
 	//;
-	ImageIO::showImage(*input);
-	static_cast<RGBImageStudent*>(input)->RGBGRAY();
+	//ImageIO::showImage(*input);
+	
+	/*for (int i = 0; i < 255; i++) {
+		int sel = i / input->getWidth();
+		if (input->getPixel(sel, i).b == input->getPixel(i).b){
+			std::cout << i << " " << sel << " weutj\n";
+		}
+		
+	}*/
+
+	IntensityImageStudent intensitytest(*input);
+	ImageIO::showImage(intensitytest);
+	//static_cast<RGBImageStudent*>(input)->RGBGRAY();
 	//std::cout << (int)test.getPixel(0,0) << "\n";
 	//5ImageIO::saveIntensityImage(test, ImageIO::getDebugFileName("debug.png"));
 	//ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));

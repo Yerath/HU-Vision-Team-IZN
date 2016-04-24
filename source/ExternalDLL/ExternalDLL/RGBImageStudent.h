@@ -6,7 +6,6 @@
 
 #pragma once
 #include "RGBImage.h"
-#include "IntensityImageStudent.h"
 class RGBImageStudent : public RGBImage {
 public:
 
@@ -24,9 +23,6 @@ public:
 	RGB getPixel(int x, int y) const;
 	RGB getPixel(int i) const;
 
-	IntensityImageStudent & RGBGRAY();
 private:
-	int swidth;
-	int sheight;
 	RGB** rgbStorage;
 };
