@@ -27,5 +27,5 @@ public:
 	void createStorage();
 	void deleteStorage();
 private:
-	Intensity** intensityStorage;
+	Intensity* intensityStorage;
 };
