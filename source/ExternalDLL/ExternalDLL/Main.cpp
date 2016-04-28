@@ -10,6 +10,7 @@
 #include "ImageFactory.h"
 #include "DLLExecution.h"
 #include "RGBImageStudent.h"
+#include "IntensityImageStudent.h"
 
 void drawFeatureDebugImage(IntensityImage &image, FeatureMap &features);
 bool executeSteps(DLLExecution * executor);
@@ -61,8 +62,48 @@ int main(int argc, char * argv[]) {
 	//input->getPixel(0, 10);
 	//input->getPixel(10);
 	//;
-	ImageIO::showImage(*input);
-	static_cast<RGBImageStudent*>(input)->RGBGRAY();
+	//ImageIO::showImage(*input);
+	
+	/*for (int i = 0; i < 255; i++) {
+		int sel = i / input->getWidth();
+		if (input->getPixel(sel, i).b != input->getPixel(i).b){
+			std::cout << i << " " << sel << " weutj\n";
+		}
+		
+	}*/
+
+	
+	for (int j = 0; j < input->getHeight(); j++) {
+		for (int i = 0; i < input->getWidth(); i++) {
+			int selc = i + j;
+			if (input->getPixel(i, j).b != input->getPixel(((j * input->getWidth()) + i)).b){
+				std::cout << i << " " << j << " " << selc << " weutj\n";
+			}
+		}
+	}
+
+	/*if (input->getPixel(98, 1).b != input->getPixel(((98*input->getWidth())+1)).b){
+		//std::cout << i << " " << j << " " << selc << " weutj\n";
+		RGB test = input->getPixel(((98 * input->getWidth()) + 1));
+		RGB test2 = input->getPixel(98, 1);
+		std::cout << (int)test.r << " " << (int)test.b << " " << (int)test.g << " rgb\n";
+		std::cout << (int)test2.r << " " << (int)test2.b << " " << (int)test2.g << " rgb\n";
+		std::cout << (100 * input->getWidth() + 1) << "sddf\n";
+		//std::cout << "dsdfs\n";
+	}*/
+
+
+	IntensityImageStudent intensitytest(*input);
+	for (int j = 0; j < intensitytest.getHeight(); j++) {
+		for (int i = 0; i < intensitytest.getWidth(); i++) {
+			int selc = i + j;
+			if (intensitytest.getPixel(i, j) != intensitytest.getPixel(((j * input->getWidth()) + i))){
+				std::cout << i << " " << j << " " << selc << " weutj\n";
+			}
+		}
+	}
+	ImageIO::showImage(intensitytest);
+	//static_cast<RGBImageStudent*>(input)->RGBGRAY();
 	//std::cout << (int)test.getPixel(0,0) << "\n";
 	//5ImageIO::saveIntensityImage(test, ImageIO::getDebugFileName("debug.png"));
 	//ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
