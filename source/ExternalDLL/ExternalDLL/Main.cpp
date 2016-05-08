@@ -11,6 +11,8 @@
 #include "DLLExecution.h"
 #include "RGBImageStudent.h"
 #include "IntensityImageStudent.h"
+#include "StudentLocalization.h"
+#include "FeatureMap.h"
 
 void drawFeatureDebugImage(IntensityImage &image, FeatureMap &features);
 bool executeSteps(DLLExecution * executor);
@@ -73,14 +75,14 @@ int main(int argc, char * argv[]) {
 	}*/
 
 	
-	for (int j = 0; j < input->getHeight(); j++) {
+	/*9for (int j = 0; j < input->getHeight(); j++) {
 		for (int i = 0; i < input->getWidth(); i++) {
 			int selc = i + j;
 			if (input->getPixel(i, j).b != input->getPixel(((j * input->getWidth()) + i)).b){
 				std::cout << i << " " << j << " " << selc << " weutj\n";
 			}
 		}
-	}
+	}*/
 
 	/*if (input->getPixel(98, 1).b != input->getPixel(((98*input->getWidth())+1)).b){
 		//std::cout << i << " " << j << " " << selc << " weutj\n";
@@ -92,17 +94,20 @@ int main(int argc, char * argv[]) {
 		//std::cout << "dsdfs\n";
 	}*/
 
-
+	FeatureMap fmap;
+	StudentLocalization sl;
 	IntensityImageStudent intensitytest(*input);
-	for (int j = 0; j < intensitytest.getHeight(); j++) {
+	/*for (int j = 0; j < intensitytest.getHeight(); j++) {
 		for (int i = 0; i < intensitytest.getWidth(); i++) {
 			int selc = i + j;
 			if (intensitytest.getPixel(i, j) != intensitytest.getPixel(((j * input->getWidth()) + i))){
 				std::cout << i << " " << j << " " << selc << " weutj\n";
 			}
 		}
-	}
-	ImageIO::showImage(intensitytest);
+	}*/
+
+	sl.stepFindExactEyes(intensitytest, fmap);
+	//ImageIO::showImage(intensitytest);
 	//static_cast<RGBImageStudent*>(input)->RGBGRAY();
 	//std::cout << (int)test.getPixel(0,0) << "\n";
 	//5ImageIO::saveIntensityImage(test, ImageIO::getDebugFileName("debug.png"));
@@ -111,7 +116,7 @@ int main(int argc, char * argv[]) {
 
 
 
-	system("pause");
+	//system("pause");
 }
 
 

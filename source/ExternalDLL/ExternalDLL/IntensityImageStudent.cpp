@@ -26,6 +26,20 @@ IntensityImageStudent::IntensityImageStudent(const RGBImage &rgbimage){
 	}
 }
 
+IntensityImageStudent::IntensityImageStudent(const IntensityImage &intensityImage){
+	IntensityImage::set(intensityImage.getWidth(), intensityImage.getHeight());
+	createStorage();
+
+	for (int i = 0; i < intensityImage.getWidth(); ++i){
+		for (int j = 0; j < intensityImage.getHeight(); ++j){
+			//RGB p = rgbimage.getPixel(i, j);
+
+			//Intensity x = 0.2989 * (p.r) + 0.5870 * (p.g) + 0.1140 * (p.b);
+			setPixel(i, j, intensityImage.getPixel(i,j));
+		}
+	}
+}
+
 IntensityImageStudent::~IntensityImageStudent() {
 	deleteStorage();
 }
@@ -63,7 +77,7 @@ void IntensityImageStudent::setPixel(int i, Intensity pixel) {
 Intensity IntensityImageStudent::getPixel(int x, int y) const {
 	if ((x >= 0 && x <= getWidth()) && (y >= 0 && y <= getHeight()))
 		return intensityStorage[y * getWidth() + x];
-	return Intensity();
+	return Intensity(0);
 }
 
 Intensity IntensityImageStudent::getPixel(int i) const {
