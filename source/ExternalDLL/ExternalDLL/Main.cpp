@@ -20,7 +20,7 @@ int main(int argc, char * argv[]) {
 	ImageFactory::setImplementation(ImageFactory::STUDENT);
 	ImageIO::isInDebugMode = true;
 
-	ImageIO::debugFolder = "D:\\Users\\Rolf\\Downloads\\FaceMinMin";
+	ImageIO::debugFolder = "D:\\HU\\Blok4\\Vision\\source\\ExternalDLL\\Debug";
 	ImageIO::isInDebugMode = true; //If set to false the ImageIO class will skip any image save function calls
 
 	RGBImage * input = ImageFactory::newRGBImage();
@@ -93,7 +93,7 @@ int main(int argc, char * argv[]) {
 	}*/
 
 
-	IntensityImageStudent intensitytest(*input);
+	IntensityImageStudent intensitytest(*input, 2);
 	for (int j = 0; j < intensitytest.getHeight(); j++) {
 		for (int i = 0; i < intensitytest.getWidth(); i++) {
 			int selc = i + j;

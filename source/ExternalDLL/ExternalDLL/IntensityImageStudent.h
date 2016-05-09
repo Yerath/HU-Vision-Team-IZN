@@ -12,7 +12,7 @@ public:
 	IntensityImageStudent();
 	IntensityImageStudent(const IntensityImageStudent &other);
 	IntensityImageStudent(const int width, const int height);
-	IntensityImageStudent(const RGBImage &rgbStudent);
+	IntensityImageStudent(const RGBImage &rgbStudent, int type);
 	~IntensityImageStudent();
 
 	void set(const int width, const int height);

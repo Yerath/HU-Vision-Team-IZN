@@ -12,18 +12,35 @@ IntensityImageStudent::IntensityImageStudent(const int width, const int height) 
 	createStorage();
 }
 
-IntensityImageStudent::IntensityImageStudent(const RGBImage &rgbimage){
+IntensityImageStudent::IntensityImageStudent(const RGBImage &rgbimage, int type){
 	IntensityImage::set(rgbimage.getWidth(), rgbimage.getHeight());
 	createStorage();
 
-	for (int i = 0; i < rgbimage.getWidth(); ++i){
-		for (int j = 0; j < rgbimage.getHeight(); ++j){
-			RGB p = rgbimage.getPixel(i, j);
-
-			Intensity x = 0.2989 * (p.r) + 0.5870 * (p.g) + 0.1140 * (p.b);
-			setPixel(i, j, x);
+	switch (type){
+		case 1:
+		//Using averaging
+		for (int i = 0; i < rgbimage.getWidth(); ++i){
+			for (int j = 0; j < rgbimage.getHeight(); ++j){
+				RGB p = rgbimage.getPixel(i, j);
+				Intensity x = (p.r + p.g + p.b) / 3;
+				setPixel(i, j, x);
+			}
 		}
+		break;
+	
+		case 2:
+			//Grayscaling with correcting for the human eye (Luminance)
+			for (int i = 0; i < rgbimage.getWidth(); ++i){
+				for (int j = 0; j < rgbimage.getHeight(); ++j){
+					RGB p = rgbimage.getPixel(i, j);
+					Intensity x = 0.2989 * (p.r) + 0.5870 * (p.g) + 0.1140 * (p.b);
+					setPixel(i, j, x);
+				}
+			}
+			break;
+
 	}
+	
 }
 
 IntensityImageStudent::~IntensityImageStudent() {
