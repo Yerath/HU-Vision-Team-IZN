@@ -1,5 +1,6 @@
 #include "IntensityImageStudent.h"
 #include <iostream>
+#include <algorithm>    // std::max
 
 IntensityImageStudent::IntensityImageStudent() : IntensityImage() {
 }
@@ -18,14 +19,14 @@ IntensityImageStudent::IntensityImageStudent(const RGBImage &rgbimage, int type)
 
 	switch (type){
 		case 1:
-		//Using averaging
-		for (int i = 0; i < rgbimage.getWidth(); ++i){
-			for (int j = 0; j < rgbimage.getHeight(); ++j){
-				RGB p = rgbimage.getPixel(i, j);
-				Intensity x = (p.r + p.g + p.b) / 3;
-				setPixel(i, j, x);
+			//Using averaging
+			for (int i = 0; i < rgbimage.getWidth(); ++i){
+				for (int j = 0; j < rgbimage.getHeight(); ++j){
+					RGB p = rgbimage.getPixel(i, j);
+					Intensity x = (p.r + p.g + p.b) / 3;
+					setPixel(i, j, x);
+				}
 			}
-		}
 		break;
 	
 		case 2:
@@ -34,6 +35,17 @@ IntensityImageStudent::IntensityImageStudent(const RGBImage &rgbimage, int type)
 				for (int j = 0; j < rgbimage.getHeight(); ++j){
 					RGB p = rgbimage.getPixel(i, j);
 					Intensity x = 0.2989 * (p.r) + 0.5870 * (p.g) + 0.1140 * (p.b);
+					setPixel(i, j, x);
+				}
+			}
+			break;
+
+		case 3:
+			//Using decomposition
+			for (int i = 0; i < rgbimage.getWidth(); ++i){
+				for (int j = 0; j < rgbimage.getHeight(); ++j){
+					RGB p = rgbimage.getPixel(i, j);
+					Intensity x = (std::max({ p.r, p.g, p.b }) + std::min({ p.r, p.g, p.b })) / 2;
 					setPixel(i, j, x);
 				}
 			}

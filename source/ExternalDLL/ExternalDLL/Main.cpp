@@ -5,6 +5,8 @@
 */
 
 #include <iostream> //std::cout
+#include <chrono> 
+#include <ctime>
 #include "ImageIO.h" //Image load and save functionality
 #include "HereBeDragons.h"
 #include "ImageFactory.h"
@@ -15,12 +17,14 @@
 void drawFeatureDebugImage(IntensityImage &image, FeatureMap &features);
 bool executeSteps(DLLExecution * executor);
 
-int main(int argc, char * argv[]) {
 
+int main(int argc, char * argv[]) {
+	std::chrono::time_point<std::chrono::system_clock> start, end;
+	double a_total = 0, c_total = 0, s_total = 0;
 	ImageFactory::setImplementation(ImageFactory::STUDENT);
 	ImageIO::isInDebugMode = true;
 
-	ImageIO::debugFolder = "D:\\HU\\Blok4\\Vision\\source\\ExternalDLL\\Debug";
+	ImageIO::debugFolder = "Z:\\HU\\Blok4\\Vision\\source\\ExternalDLL\\Debug";
 	ImageIO::isInDebugMode = true; //If set to false the ImageIO class will skip any image save function calls
 
 	RGBImage * input = ImageFactory::newRGBImage();
@@ -29,87 +33,47 @@ int main(int argc, char * argv[]) {
 		system("pause");
 		return 0;
 	}
-
-
-	//ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
-
-	//DLLExecution * executor = new DLLExecution(input);
-
-
-	//if (executeSteps(executor)) {
-	//std::cout << "Face recognition successful!" << std::endl;
-	//std::cout << "Facial parameters: " << std::endl;
-	//for (int i = 0; i < 16; i++) {
-	//std::cout << (i+1) << ": " << executor->facialParameters[i] << std::endl;
-	//}
-	//}
-
-	//delete executor;
-	//system("pause");
-	//return 1;*/
-
-	//	ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
-
-	//int w = src.getWidth();
-	//int h = src.getHeight();
-
-	//dst.create(h, w, CV_8UC3);
-
 	
+	for (int i = 0; i < 50; i++){
+		//Create Image using the Averaging Algortime
+		start = std::chrono::system_clock::now();
+		IntensityImageStudent averagingImage(*input, 1);
+		end = std::chrono::system_clock::now();
 
-	//input->getPixel(0, 10);
-	////input->setPixel(10, RGB(2, 0, 0));
-	//input->getPixel(0, 10);
-	//input->getPixel(10);
-	//;
-	//ImageIO::showImage(*input);
-	
-	/*for (int i = 0; i < 255; i++) {
-		int sel = i / input->getWidth();
-		if (input->getPixel(sel, i).b != input->getPixel(i).b){
-			std::cout << i << " " << sel << " weutj\n";
-		}
+		std::chrono::duration<double> elapsed_seconds = end - start;
+		a_total += elapsed_seconds.count();
+		std::cout << "Elapsed seconds Averaging: " << elapsed_seconds.count() << std::endl;
+
+		//ImageIO::showImage(averagingImage);
+
+
+		//Create Image using the Averaging Algoritme with correcting for the human eye
+		start = std::chrono::system_clock::now();
+		IntensityImageStudent correctingImage(*input, 2);
+		end = std::chrono::system_clock::now();
+
+		elapsed_seconds = end - start;
+		c_total += elapsed_seconds.count();
+		std::cout << "Elapsed seconds Correction: " << elapsed_seconds.count() << std::endl;
+
+		//ImageIO::showImage(correctingImage);
+
+		//Create Image using desaturation 
+		start = std::chrono::system_clock::now();
+		IntensityImageStudent desatImage(*input, 3);
+		end = std::chrono::system_clock::now();
+
+		elapsed_seconds = end - start;
+		s_total += elapsed_seconds.count();
+		std::cout << "Elapsed seconds Desaturation: " << elapsed_seconds.count() << std::endl << std::endl;
 		
-	}*/
-
-	
-	for (int j = 0; j < input->getHeight(); j++) {
-		for (int i = 0; i < input->getWidth(); i++) {
-			int selc = i + j;
-			if (input->getPixel(i, j).b != input->getPixel(((j * input->getWidth()) + i)).b){
-				std::cout << i << " " << j << " " << selc << " weutj\n";
-			}
-		}
 	}
+	std::cout << "======================================================================" << std::endl;
+	std::cout << "Averaging Algoritme Seconds: " << a_total / 50 << std::endl;
+	std::cout << "Correction Algoritme Seconds: " << c_total / 50 << std::endl;
+	std::cout << "Desaturation Algoritme Seconds: " << s_total / 50 << std::endl;
 
-	/*if (input->getPixel(98, 1).b != input->getPixel(((98*input->getWidth())+1)).b){
-		//std::cout << i << " " << j << " " << selc << " weutj\n";
-		RGB test = input->getPixel(((98 * input->getWidth()) + 1));
-		RGB test2 = input->getPixel(98, 1);
-		std::cout << (int)test.r << " " << (int)test.b << " " << (int)test.g << " rgb\n";
-		std::cout << (int)test2.r << " " << (int)test2.b << " " << (int)test2.g << " rgb\n";
-		std::cout << (100 * input->getWidth() + 1) << "sddf\n";
-		//std::cout << "dsdfs\n";
-	}*/
-
-
-	IntensityImageStudent intensitytest(*input, 2);
-	for (int j = 0; j < intensitytest.getHeight(); j++) {
-		for (int i = 0; i < intensitytest.getWidth(); i++) {
-			int selc = i + j;
-			if (intensitytest.getPixel(i, j) != intensitytest.getPixel(((j * input->getWidth()) + i))){
-				std::cout << i << " " << j << " " << selc << " weutj\n";
-			}
-		}
-	}
-	ImageIO::showImage(intensitytest);
-	//static_cast<RGBImageStudent*>(input)->RGBGRAY();
-	//std::cout << (int)test.getPixel(0,0) << "\n";
-	//5ImageIO::saveIntensityImage(test, ImageIO::getDebugFileName("debug.png"));
-	//ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
-	//ImageIO::showImage(test);
-
-
+	//ImageIO::showImage(desatImage);
 
 	system("pause");
 }
