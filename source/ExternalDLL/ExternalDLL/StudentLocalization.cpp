@@ -110,7 +110,7 @@ bool StudentLocalization::stepFindExactEyes(const IntensityImage &image, Feature
 	Point2D<double> noseBottom = features.getFeature(Feature::FEATURE_NOSE_BOTTOM).getPoints()[0];
 	int headWidth = (int)(headRightPoint.getX() - headLeftPoint.getX());
 
-	for (int i = -5; i < 5; i++) {
+	/*for (int i = -5; i < 5; i++) {
 		for (int j = -5; j < 5; j++) {
 			tempimage.setPixel(headLeftPoint.getX() + i, headLeftPoint.getY() + j, 128);
 		}
@@ -138,37 +138,81 @@ bool StudentLocalization::stepFindExactEyes(const IntensityImage &image, Feature
 		for (int j = -5; j < 5; j++) {
 			tempimage.setPixel(noseBottom.getX() + i, noseBottom.getY() + j, 128);
 		}
+	}*/
+
+	int abovenose = noseBottom.getY() - (headWidth / 2.5);
+
+	/*for (int i = -5; i < 5; i++) {
+	for (int j = -5; j < 5; j++) {
+	tempimage.setPixel(headLeftPoint.getX() + i, abovenose + j, 40);
+	}
 	}
 
+	for (int i = -5; i < 5; i++) {
+	for (int j = -5; j < 5; j++) {
+	tempimage.setPixel(headRightPoint.getX() + i, abovenose + j, 40);
+	}
+	}
 
+	for (int i = -5; i < 5; i++) {
+	for (int j = -5; j < 5; j++) {
+	tempimage.setPixel(headRightPoint.getX() + i, (abovenose - headWidth/2) + j, 40);
+	}
+	}
 
+	for (int i = -5; i < 5; i++) {
+	for (int j = -5; j < 5; j++) {
+	tempimage.setPixel(headLeftPoint.getX() + i, (abovenose - headWidth/2) + j, 40);
+	}
+	}*/
+	int widthf = headRightPoint.getX() - headLeftPoint.getX();
+	int heightf = abovenose - (abovenose - (headWidth / 2));
+
+	std::cout << widthf << " " << heightf << "\n";
+
+	IntensityImageStudent test;
+	test.set(widthf, heightf);
+	std::cout << headLeftPoint.getX() << " " << headRightPoint.getX() << "\n";
+	std::cout << (abovenose - (headWidth/2)) << " " << headLeftPoint.getX() << "\n";
+	
+	for (int i = headLeftPoint.getX(); i < headRightPoint.getX(); i++) {
+		for (int j = (abovenose - (headWidth /2)); j < abovenose; j++){
+			tempimage.setPixel(i,j, 40);
+			test.setPixel(i - headLeftPoint.getX(), j - (abovenose - (headWidth / 2)), image.getPixel(i, j));
+		}
+	}
+	//ImageIO::showImage(test);
+	IntensityImageStudent subset(test);
+	
 	//std::cout << headLeftPoint.getX() << "\n";
 	//std::cout << headRightPoint << "\n";
-	/*int k1 = 0, k2 = 1, k3 = 0,
+	int k1 = 0, k2 = 1, k3 = 0,
 		k4 = 1, k5 = 1, k6 = 1,
 		k7 = 0, k8 = 1, k9 = 0;
 	int ksum = (k1 + k2 + k3 + k4 + k5 + k6 + k7 + k8 + k9);
 	
-	for (int i = 0; i < image.getWidth(); ++i){
-		for (int j = 0; j < image.getHeight(); ++j){
+	for (int i = 0; i < test.getWidth(); ++i){
+		for (int j = 0; j < test.getHeight(); ++j){
 			//int tmp = image.getPixel(i, j);
-			int s = k1 * image.getPixel(i - 1, j - 1)
-				+ k2 * image.getPixel(i, j - 1)
-				+ k3 * image.getPixel(i + 1, j - 1)
-				+ k4 * image.getPixel(i - 1, j)
-				+ k5 * image.getPixel(i, j)
-				+ k6 * image.getPixel(i + 1, j)
-				+ k7 * image.getPixel(i - 1, j + 1)
-				+ k8 * image.getPixel(i, j + 1)
-				+ k9 * image.getPixel(i + 1, j + 1);
-			float tmp = s / ksum;
+			int s = k1 * test.getPixel(i - 1, j - 1)
+				+ k2 * test.getPixel(i, j - 1)
+				+ k3 * test.getPixel(i + 1, j - 1)
+				+ k4 * test.getPixel(i - 1, j)
+				+ k5 * test.getPixel(i, j)
+				+ k6 * test.getPixel(i + 1, j)
+				+ k7 * test.getPixel(i - 1, j + 1)
+				+ k8 * test.getPixel(i, j + 1)
+				+ k9 * test.getPixel(i + 1, j + 1);
+			//float tmp = s / ksum;
 
-			tempimage.setPixel(i, j, (image.getPixel(i, j) - tmp));
+			subset.setPixel(i, j, s
+				);
 		}
-	}*/
+	}
 
 	//ImageIO::showImage(image);
-	ImageIO::showImage(tempimage);
+	ImageIO::showImage(subset);
+	//ImageIO::showImage(test);
 	
 	return false;
 }
