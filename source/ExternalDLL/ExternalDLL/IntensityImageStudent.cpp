@@ -52,9 +52,9 @@ void IntensityImageStudent::set(const int width, const int height) {
 }
 
 void IntensityImageStudent::set(const IntensityImageStudent &other) {
-	deleteStorage(); 
+//	deleteStorage(); 
 	IntensityImage::set(other.getWidth(), other.getHeight());
-	createStorage();
+//	createStorage();
 
 
 	for (int x = 0; x < getWidth(); ++x){

@@ -203,12 +203,44 @@ bool StudentLocalization::stepFindExactEyes(const IntensityImage &image, Feature
 				+ k7 * test.getPixel(i - 1, j + 1)
 				+ k8 * test.getPixel(i, j + 1)
 				+ k9 * test.getPixel(i + 1, j + 1);
-			//float tmp = s / ksum;
+			float tmp = s / ksum;
 
-			subset.setPixel(i, j, s
-				);
+			subset.setPixel(i, j, s);
 		}
 	}
+	ImageIO::showImage(subset);
+	IntensityImageStudent hist;
+	hist.set(subset.getWidth(), 400);
+
+
+	//ImageIO imageshower;
+	//imageshower.showImageaa(subset);
+	//ImageIO::showImage(subset, "testwindow");
+	IntensityImageStudent showwhere(subset);
+	int* testarray = new int[subset.getWidth()];
+	int sum = 0;
+	for (int j = 0; j < test.getHeight(); ++j){
+		showwhere.set(subset);
+		for (int i = 0; i < subset.getWidth(); ++i){
+			showwhere.setPixel(i,j,0);
+			testarray[i] = subset.getPixel(i, j);
+			sum += subset.getPixel(i, j);
+			for (int z = 0; z < hist.getHeight(); z++) {
+				hist.setPixel(i,z,255);
+			}
+			//std::cout << "pixsel " << (int)subset.getPixel(i, j) << "\n";
+			hist.setPixel(i, 50 +subset.getPixel(i, j),0);
+		}
+		sum /= subset.getWidth();
+		std::cout << "y " << j  << "\n";
+		sum = 0;
+
+		ImageIO::showImage(showwhere, "dd");
+		ImageIO::showImage(hist);
+	}
+
+	delete testarray;
+	
 
 	//ImageIO::showImage(image);
 	ImageIO::showImage(subset);
