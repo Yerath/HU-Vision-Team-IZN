@@ -9,19 +9,21 @@
 #include "HereBeDragons.h"
 #include "ImageFactory.h"
 #include "DLLExecution.h"
-#include "RGBImageStudent.h"
-#include "IntensityImageStudent.h"
 
 void drawFeatureDebugImage(IntensityImage &image, FeatureMap &features);
 bool executeSteps(DLLExecution * executor);
 
 int main(int argc, char * argv[]) {
 
+	//ImageFactory::setImplementation(ImageFactory::DEFAULT);
 	ImageFactory::setImplementation(ImageFactory::STUDENT);
-	ImageIO::isInDebugMode = true;
+
 
 	ImageIO::debugFolder = "D:\\Users\\Rolf\\Downloads\\FaceMinMin";
 	ImageIO::isInDebugMode = true; //If set to false the ImageIO class will skip any image save function calls
+
+
+
 
 	RGBImage * input = ImageFactory::newRGBImage();
 	if (!ImageIO::loadImage("female-3.png", *input)) {
@@ -31,87 +33,22 @@ int main(int argc, char * argv[]) {
 	}
 
 
-	//ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
+	ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
 
-	//DLLExecution * executor = new DLLExecution(input);
+	DLLExecution * executor = new DLLExecution(input);
 
 
-	//if (executeSteps(executor)) {
-	//std::cout << "Face recognition successful!" << std::endl;
-	//std::cout << "Facial parameters: " << std::endl;
-	//for (int i = 0; i < 16; i++) {
-	//std::cout << (i+1) << ": " << executor->facialParameters[i] << std::endl;
-	//}
-	//}
-
-	//delete executor;
-	//system("pause");
-	//return 1;*/
-
-	//	ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
-
-	//int w = src.getWidth();
-	//int h = src.getHeight();
-
-	//dst.create(h, w, CV_8UC3);
-
-	
-
-	//input->getPixel(0, 10);
-	////input->setPixel(10, RGB(2, 0, 0));
-	//input->getPixel(0, 10);
-	//input->getPixel(10);
-	//;
-	//ImageIO::showImage(*input);
-	
-	/*for (int i = 0; i < 255; i++) {
-		int sel = i / input->getWidth();
-		if (input->getPixel(sel, i).b != input->getPixel(i).b){
-			std::cout << i << " " << sel << " weutj\n";
-		}
-		
-	}*/
-
-	
-	for (int j = 0; j < input->getHeight(); j++) {
-		for (int i = 0; i < input->getWidth(); i++) {
-			int selc = i + j;
-			if (input->getPixel(i, j).b != input->getPixel(((j * input->getWidth()) + i)).b){
-				std::cout << i << " " << j << " " << selc << " weutj\n";
-			}
+	if (executeSteps(executor)) {
+		std::cout << "Face recognition successful!" << std::endl;
+		std::cout << "Facial parameters: " << std::endl;
+		for (int i = 0; i < 16; i++) {
+			std::cout << (i + 1) << ": " << executor->facialParameters[i] << std::endl;
 		}
 	}
 
-	/*if (input->getPixel(98, 1).b != input->getPixel(((98*input->getWidth())+1)).b){
-		//std::cout << i << " " << j << " " << selc << " weutj\n";
-		RGB test = input->getPixel(((98 * input->getWidth()) + 1));
-		RGB test2 = input->getPixel(98, 1);
-		std::cout << (int)test.r << " " << (int)test.b << " " << (int)test.g << " rgb\n";
-		std::cout << (int)test2.r << " " << (int)test2.b << " " << (int)test2.g << " rgb\n";
-		std::cout << (100 * input->getWidth() + 1) << "sddf\n";
-		//std::cout << "dsdfs\n";
-	}*/
-
-
-	IntensityImageStudent intensitytest(*input);
-	for (int j = 0; j < intensitytest.getHeight(); j++) {
-		for (int i = 0; i < intensitytest.getWidth(); i++) {
-			int selc = i + j;
-			if (intensitytest.getPixel(i, j) != intensitytest.getPixel(((j * input->getWidth()) + i))){
-				std::cout << i << " " << j << " " << selc << " weutj\n";
-			}
-		}
-	}
-	ImageIO::showImage(intensitytest);
-	//static_cast<RGBImageStudent*>(input)->RGBGRAY();
-	//std::cout << (int)test.getPixel(0,0) << "\n";
-	//5ImageIO::saveIntensityImage(test, ImageIO::getDebugFileName("debug.png"));
-	//ImageIO::saveRGBImage(*input, ImageIO::getDebugFileName("debug.png"));
-	//ImageIO::showImage(test);
-
-
-
+	delete executor;
 	system("pause");
+	return 1;
 }
 
 
@@ -177,7 +114,7 @@ bool executeSteps(DLLExecution * executor) {
 		return false;
 	}
 
-	if (!executor->executeLocalizationStep5(false)) {
+	if (!executor->executeLocalizationStep5(true)) {
 		std::cout << "Localization step 5 failed!" << std::endl;
 		return false;
 	}

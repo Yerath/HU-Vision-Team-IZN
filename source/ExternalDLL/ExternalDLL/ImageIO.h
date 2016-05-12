@@ -30,8 +30,10 @@ public:
 	static bool saveIntensityImage(const IntensityImage &image, std::string file);
 
 	//Show
+	static void showImage(const IntensityImage &image,std::string windowname);
 	static void showImage(const IntensityImage &image);
 	static void showImage(const RGBImage &image);
+
 
 	//Convert
 	static void intensityToRGB(const IntensityImage &in, RGBImage &out);

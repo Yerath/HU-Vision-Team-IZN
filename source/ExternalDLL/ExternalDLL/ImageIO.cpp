@@ -122,6 +122,25 @@ void ImageIO::showImage(const IntensityImage &src) {
 	}
 }
 
+void ImageIO::showImage(const IntensityImage &src, std::string windowname) {
+	if (ImageIO::isInDebugMode == false) {
+		return;
+	}
+	Mat image;
+	HereBeDragons::HerLoveForWhoseDearLoveIRiseAndFall(src, image);
+
+	if (!image.data) {
+		std::cout << "ImageIO::showImage(const RGBImage &src): Could not open the image!" << std::endl;
+	}
+	else {
+		namedWindow(windowname, WINDOW_AUTOSIZE);
+		imshow(windowname, image);
+		//waitKey(0);
+		//cvDestroyWindow("Display window");
+	}
+}
+
+
 void ImageIO::intensityToRGB(const IntensityImage &in, RGBImage &out) {
 	out.set(in.getWidth(), in.getHeight());
 	for (int x = 0; x < in.getWidth(); x++) {
