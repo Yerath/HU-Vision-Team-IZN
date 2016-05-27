@@ -1,6 +1,7 @@
 #include "StudentLocalization.h"
 #include "IntensityImageStudent.h"
 #include "ImageIO.h" //Image load and save functionality
+#include "StudentKernal.h"
 
 bool StudentLocalization::stepFindHead(const IntensityImage &image, FeatureMap &features) const {
 	return false;
@@ -181,31 +182,65 @@ bool StudentLocalization::stepFindExactEyes(const IntensityImage &image, Feature
 			test.setPixel(i - headLeftPoint.getX(), j - (abovenose - (headWidth / 2)), image.getPixel(i, j));
 		}
 	}
-	//ImageIO::showImage(test);
-	IntensityImageStudent subset(test);
+	ImageIO::showImage(test);
+	int kernalx[3][3] = { { 0, 1, 0 }, { 1, 1, 1 }, { 0, 1, 0 } };
+	IntensityImageStudent * tests = StudentKernal::applyKernal(test, kernalx, false, false);
+	ImageIO::showImage(*tests);
+
 	
 	//std::cout << headLeftPoint.getX() << "\n";
 	//std::cout << headRightPoint << "\n";
-	int k1 = 0, k2 = 1, k3 = 0,
+	/*int k1 = 0, k2 = 1, k3 = 0,
 		k4 = 1, k5 = 1, k6 = 1,
 		k7 = 0, k8 = 1, k9 = 0;
 	int ksum = (k1 + k2 + k3 + k4 + k5 + k6 + k7 + k8 + k9);
-	
+
+	/*int k1s = 1, k2s = 2, k3s = 1,
+		k4s = 2, k5s = 4, k6s = 2,
+		k7s = 1, k8s = 2, k9s = 1;*/
+/*	int k1s = 0, k2s = -1, k3s = 0,
+		k4s = -1, k5s = 2, k6s = -1,
+		k7s = 0, k8s = -1, k9s = 0;
+	int ksums = (k1s + k2s + k3s + k4s + k5s + k6s + k7s + k8s + k9s);
+
+	IntensityImageStudent blur(test);
+
 	for (int i = 0; i < test.getWidth(); ++i){
 		for (int j = 0; j < test.getHeight(); ++j){
 			//int tmp = image.getPixel(i, j);
-			int s = k1 * test.getPixel(i - 1, j - 1)
-				+ k2 * test.getPixel(i, j - 1)
-				+ k3 * test.getPixel(i + 1, j - 1)
-				+ k4 * test.getPixel(i - 1, j)
-				+ k5 * test.getPixel(i, j)
-				+ k6 * test.getPixel(i + 1, j)
-				+ k7 * test.getPixel(i - 1, j + 1)
-				+ k8 * test.getPixel(i, j + 1)
-				+ k9 * test.getPixel(i + 1, j + 1);
+			int sk = k1s * test.getPixel(i - 1, j - 1)
+				+ k2s * test.getPixel(i, j - 1)
+				+ k3s * test.getPixel(i + 1, j - 1)
+				+ k4s * test.getPixel(i - 1, j)
+				+ k5s * test.getPixel(i, j)
+				+ k6s * test.getPixel(i + 1, j)
+				+ k7s * test.getPixel(i - 1, j + 1)
+				+ k8s * test.getPixel(i, j + 1)
+				+ k9s * test.getPixel(i + 1, j + 1);
+//			float tmp = sk / (ksums);
+
+			blur.setPixel(i, j, sk);
+		}
+	}
+	ImageIO::showImage(test);
+	ImageIO::showImage(blur);
+	IntensityImageStudent subset(blur);
+	
+	for (int i = 0; i < blur.getWidth(); ++i){
+		for (int j = 0; j < blur.getHeight(); ++j){
+			//int tmp = image.getPixel(i, j);
+			int s = k1 * blur.getPixel(i - 1, j - 1)
+				+ k2 * blur.getPixel(i, j - 1)
+				+ k3 * blur.getPixel(i + 1, j - 1)
+				+ k4 * blur.getPixel(i - 1, j)
+				+ k5 * blur.getPixel(i, j)
+				+ k6 * blur.getPixel(i + 1, j)
+				+ k7 * blur.getPixel(i - 1, j + 1)
+				+ k8 * blur.getPixel(i, j + 1)
+				+ k9 * blur.getPixel(i + 1, j + 1);
 			float tmp = s / ksum;
 
-			subset.setPixel(i, j, s);
+			subset.setPixel(i, j, blur.getPixel(i, j) - s);
 		}
 	}
 	ImageIO::showImage(subset);
@@ -244,7 +279,7 @@ bool StudentLocalization::stepFindExactEyes(const IntensityImage &image, Feature
 
 	//ImageIO::showImage(image);
 	ImageIO::showImage(subset);
-	//ImageIO::showImage(test);
+	//ImageIO::showImage(test);*/
 	
 	return false;
 }
