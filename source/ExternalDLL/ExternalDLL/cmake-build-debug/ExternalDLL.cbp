@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ExternalDLL"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\..\..\..\..\usr\local\share\OpenCV\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ExternalDLL">
+				<Option output="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/ExternalDLL" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 ExternalDLL"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ExternalDLL/fast">
+				<Option output="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/ExternalDLL" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 ExternalDLL/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Algorithm.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/DLLExecution.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/DLLExecution.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/DefaultExtraction.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/DefaultExtraction.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/DefaultLocalization.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/DefaultLocalization.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/DefaultPreProcessing.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/DefaultPreProcessing.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Extraction.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Feature.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Feature.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/FeatureMap.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/FeatureMap.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/GrayscaleAlgorithm.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/GrayscaleAlgorithm.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/HereBeDragons.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/HereBeDragons.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Image.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Image.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/ImageFactory.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/ImageFactory.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/ImageIO.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/ImageIO.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/IntensityImage.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/IntensityImage.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/IntensityImagePrivate.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/IntensityImagePrivate.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/IntensityImageStudent.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/IntensityImageStudent.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Localization.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Main.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/PixelType.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Point2D.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/PostProcessing.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/PostProcessing.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/PreProcessing.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/RGBImage.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/RGBImage.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/RGBImagePrivate.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/RGBImagePrivate.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/RGBImageStudent.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/RGBImageStudent.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Representation.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/Representation.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/SonnetXVIII.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/SonnetXVIII.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/StudentExtraction.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/StudentExtraction.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/StudentKernal.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/StudentKernal.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/StudentLocalization.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/StudentLocalization.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/StudentPreProcessing.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/StudentPreProcessing.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/export.cpp">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/export.h">
+			<Option target="ExternalDLL"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/../../../../../../../../usr/local/share/OpenCV/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/../../../../../../../../usr/local/share/OpenCV/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/../../../../../../../../usr/local/share/OpenCV/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/ExternalDLL/ExternalDLL/../../../../../../../../usr/local/share/OpenCV/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\usr\local\share\OpenCV\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

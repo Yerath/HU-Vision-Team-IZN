@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="FaceRecognitionGUI"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FaceRecognitionGUI">
+				<Option output="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/FaceRecognitionGUI" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 FaceRecognitionGUI"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FaceRecognitionGUI/fast">
+				<Option output="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/FaceRecognitionGUI" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 FaceRecognitionGUI/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/App.config">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/ConfigManager.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/EditTestSetDialog.Designer.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/EditTestSetDialog.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/EditTestSetDialog.resx">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/FaceRecognitionGUI.csproj">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/FaceRecognitionTask.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/MainForm.Designer.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/MainForm.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/MainForm.resx">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/OptionsForm.Designer.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/OptionsForm.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/OptionsForm.resx">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/PictureBoxNearestNeighbor.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/PictureForm.Designer.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/PictureForm.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/PictureForm.resx">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/Program.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/Properties/AssemblyInfo.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/Properties/Resources.Designer.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/Properties/Resources.resx">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/Properties/Settings.Designer.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/Properties/Settings.settings">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/README.txt">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/Resources/App.config">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/Serialization.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/Settings.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/TestsetManagerForm.Designer.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/TestsetManagerForm.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/TestsetManagerForm.resx">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/VisionDLL.cs">
+			<Option target="FaceRecognitionGUI"/>
+		</Unit>
+		<Unit filename="/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
