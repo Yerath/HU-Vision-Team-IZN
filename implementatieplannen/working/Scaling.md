@@ -12,10 +12,17 @@ Het op schaal brengen van een afbeelding is een belangrijk onderdeel van de pre-
 
 
 ## 1. Doel
-Voor het bewerken van een afbeelding is het belangrijk dat de afbeelding aan de alle invoerafbeeldingen voldoen aan dezelfde cirteria.
+Voor het bewerken van een afbeelding is het belangrijk dat de afbeelding aan de alle invoerafbeeldingen voldoen aan dezelfde cirteria. In deze pre-processing fase zal er scaling uitgevoerd moeten worden.
 
 
 ## 2. Methoden
+Voor het scalen van afbeeldingen zijn er veel methoden mogelijk. Hieronder staan ze beschreven met een korte uitleg over de werking en de verschillen tussen de methoden.
 
-## 3. Kezue
+### 2.1 Nearest-Neighbor Interpolation
+Nearest-Neighbor Interpolation is eigenlijk de simpelste manier van interpolatie. Er wordt gekeken naar de dichtsbijzijnde pixel (zijn neighbor) gekeken en daar wordt de intensiteit van overgenomen.
+Als de scaling van de image 2 is, dan zal het net lijken of de pixels ook 2 keer zo groot zijn geworden.
+
+![alt text](http://tech-algorithm.com/uploads/nneighbor01.png "Werking van Nearest Neighbour Image Scaling")
+
+## 3. Keuze
 
