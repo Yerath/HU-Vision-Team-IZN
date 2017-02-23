@@ -18,15 +18,15 @@ int main(int argc, char * argv[]) {
 	//ImageFactory::setImplementation(ImageFactory::DEFAULT);
 	ImageFactory::setImplementation(ImageFactory::STUDENT);
 
-
-	ImageIO::debugFolder = "D:\\Users\\Rolf\\Downloads\\FaceMinMin";
+	//
+	ImageIO::debugFolder = "D:\\school\\vision";
 	ImageIO::isInDebugMode = true; //If set to false the ImageIO class will skip any image save function calls
 
 
 
 
 	RGBImage * input = ImageFactory::newRGBImage();
-	if (!ImageIO::loadImage("male-2.png", *input)) {
+	if (!ImageIO::loadImage("female-3.png", *input)) {
 		std::cout << "Image could not be loaded!" << std::endl;
 		system("pause");
 		return 0;
@@ -68,7 +68,7 @@ bool executeSteps(DLLExecution * executor) {
 		return false;
 	}
 
-	if (!executor->executePreProcessingStep2(false)) {
+	if (!executor->executePreProcessingStep2(true)) {
 		std::cout << "Pre-processing step 2 failed!" << std::endl;
 		return false;
 	}
@@ -114,7 +114,7 @@ bool executeSteps(DLLExecution * executor) {
 		return false;
 	}
 
-	if (!executor->executeLocalizationStep5(true)) {
+	if (!executor->executeLocalizationStep5(false)) {
 		std::cout << "Localization step 5 failed!" << std::endl;
 		return false;
 	}
