@@ -1,0 +1,3 @@
+/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/yerath/Development/HU/Vision/source/FaceRecognitionGUI/FaceRecognitionGUI/cmake-build-debug/CMakeFiles/FaceRecognitionGUI.dir
