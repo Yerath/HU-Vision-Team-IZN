@@ -20,3 +20,5 @@ ExternalDLL/Debug/
 *.opensdf
 ExternalDLL/ExternalDLL/Release/
 ExternalDLL/Release/
+*.VC.opendb
+*.VC.db
