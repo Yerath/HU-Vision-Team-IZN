@@ -16,25 +16,50 @@ Voor het bewerken van een afbeelding is het belangrijk dat de afbeelding aan de 
 
 
 ## 2. Methoden
+
+
+### 2.1 Mapping
+
 Wanneer we een bewerking uitvoeren op de afbeelding (transformatie) moet er voor iedere oude pixel in de afbeelding, een nieuwe pixel berekend worden in de nieuwe afbeelding. Hiervoor zijn er twee manieren: 
 
 - Forward mapping
 - Backward mapping
 
+#### 2.1.1 Forward Mapping
+Wanneer er een transformatie word gedaan op een afbeelding, word er vaak meteen gedacht aan de oude pixel naar de nieuwe afbeelding te plaatsen. Eerst bereken je waar deze ongeveer moet komen en welke kleur deze moet hebben. 
+
+Echter is het mogelijk dat de oude afbeelding minder pixels bevat dan de nieuwe. Hierdoor kan er nooit gegarandeerd worden dat alle pixels een kleur krijgen in de nieuwe afbeelding. Dus hoe groter de afbeelding hoe groter de gaten worden waar geen "kleur" is.
+
+Het voordeel van Foward Mapping is dat dit snel is aangezien er weinige uitgerekend hoeft te worden. Je zou dit eventueel kunnen gebruiken wanneer je "use case" bijvoorbeeld is dat een afbeelding alleen kleiner gemaakt moet worden. 
+
+#### 2.1.2 Backward Mapping
+Om het probleem te tackelen van Forward mapping is er nog Backward Mapping.  Dit maakt gebruik van de inverse tranformatie van Forward Mapping. Hierdoor krijgen alle pixels in de nieuwe afbeelding een kleur. Echter kan dit er wel voor zorgen dat de kleuren (of details) wegvallen vanwege de berekening voor een nieuwe kleur. Er zijn verschillende manieren om de nieuwe kleur te berekenen, de methoden staan verder in dit hoofdstuk beschreven. 
+
+
+#### 2.1.3 Gebruikte mapping methode
 Tijdens deze implementatie wordt er vanuit gegaan van Backward mapping. Dit betekent dat de nieuwe pixel berekend wordt vanuit de oude afbeelding. Hierdoor zal elke pixel een kleur hebben. Er zijn diverse methoden om de kleur te bepalen van de nieuwe pixel. Uit alle methoden is er gekozen om er 3 te implementeren.
 
 
 ### 2.1 Nearest-Neighbor Interpolation
-Nearest-Neighbor Interpolation is eigenlijk de simpelste manier van interpolatie. Er wordt gekeken naar de dichtsbijzijnde pixel (zijn neighbor) gekeken en daar wordt de intensiteit van overgenomen.
-Als de scaling van de image 2 is, dan zal het net lijken of de pixels ook 2 keer zo groot zijn geworden.
+![ImageScaling text | center](http://tech-algorithm.com/uploads/nneighbor01.png "Werking van Nearest Neighbour Image Scaling")
 
-![alt text](http://tech-algorithm.com/uploads/nneighbor01.png "Werking van Nearest Neighbour Image Scaling")
+Nearest-Neighbor Interpolation is eigenlijk de simpelste manier van interpolatie. Vanaf de nieuw afbeelding word er gekeken waar de pixel ongeveer moet zijn op de oude afbeelding. Hier word er gekeken naar de dichtsbijzijnste pixel van de berekende locatie en dan word de intensiteit van die pixel overgenomen. 
+
+Het nadeel van deze methode is dat er aliasing op treed aan de randen. Hierdoor kunnen gradients niet makkelijk vergroot worden en zullen de randen er ook kartelig uit zien. Zoals hieronder ook gedemonstreed is. 
+
+<p align="center">
+![Aliasing test | center](http://i.imgur.com/BRyg26q.png "Aliasing die optreed bij vergroten.")
+</p>
+
+
 
 ### 2.2 Bilinear Interpolation
+![alt text](http://i.imgur.com/5Bctxml.png "Werking van Nearest Neighbour Image Scaling")
+
 Waar de Nearest-Neighbor Interpolation alleen kijkt naar de dichtsbijzijnde pixel en zijn waarde overneemt, kijkt de Bilinear manier naar de afstand van de 4 dichstbijzijnde pixels. 
 Hoever de 4 pixels om de (nog uit te rekenen) pixel staat geeft aan hoeveel hun waardes wegen. 
 
-![alt text](http://i.imgur.com/5Bctxml.png "Werking van Nearest Neighbour Image Scaling")
+
 
 ### 2.3 Bicubic Interpolation
 Deze methode werkt hetzelfde als de Bilinear Interpolation. Het verschil zit hem echter in de hoeveelheid pixels er worden bekenen. Bij de Bilinear interplotie worden de pixels bekeken bij een 2x2 grid. Met de Bicubic wordt er gekeken naar een 4x4 grid. Totaal 16 pixels.
@@ -51,7 +76,6 @@ Sinc resampling
 Met deze methode worden wordt de afbeelding omgezet in (niet resolutie gebonden) vectors voor schaling. Het is een goede methode voor simpele geometrische afbeeldingen. Helaas zorgt deze methoden er veel voor dat er veel details verloren gaan (zie afbeelding hieronder)
 
 ![alt text](https://i.imgur.com/hiAKpCL.png "Werking van Nearest Neighbour Image Scaling")
-
 
 
 
