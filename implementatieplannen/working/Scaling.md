@@ -1,6 +1,6 @@
 # Implementatieplan Scaling
 
-<span style="font-style:italic;width:100%;display:block;"> Datum: 13 February 2017 </span>
+<span style="font-style:italic;width:100%;display:block;"> Datum: 3 November 2017 </span>
 <br />Made by: <br /><div style="margin-left: 20px">
 Dimitry Volker | 1661152 <br >
 Jasper van Hulst | 1660498
@@ -10,13 +10,11 @@ ____________
 
 Het op schaal brengen van een afbeelding is een belangrijk onderdeel van de pre-processing. Het is belangrijk dat alle invoerafbeeldingen, voor sommige programma’s, voordoen aan dezelfde criteria, denk hier over formaat, zwart-wit, edge detected, etc.
 
-
 ## 1. Doel
 Voor het bewerken van een afbeelding is het belangrijk dat de afbeelding aan de alle invoerafbeeldingen voldoen aan dezelfde cirteria. In deze pre-processing fase zal er scaling uitgevoerd moeten worden. Voor het programma dient een afbeelding vergroot te worden (upscaling), maar ook verkleint worden (downscaling). Daarom moet de methode die geimplementeerd wordt, dit beide kunnen. 
 
 
 ## 2. Methoden
-
 
 ### 2.1 Mapping
 
@@ -47,45 +45,69 @@ Nearest-Neighbor Interpolation is eigenlijk de simpelste manier van interpolatie
 
 Het nadeel van deze methode is dat er aliasing op treed aan de randen. Hierdoor kunnen gradients niet makkelijk vergroot worden en zullen de randen er ook kartelig uit zien. Zoals hieronder ook gedemonstreed is. 
 
-<p align="center">
+
 ![Aliasing test | center](http://i.imgur.com/BRyg26q.png "Aliasing die optreed bij vergroten.")
-</p>
 
 
 
 ### 2.2 Bilinear Interpolation
 ![alt text](http://i.imgur.com/5Bctxml.png "Werking van Nearest Neighbour Image Scaling")
 
-Waar de Nearest-Neighbor Interpolation alleen kijkt naar de dichtsbijzijnde pixel en zijn waarde overneemt, kijkt de Bilinear manier naar de afstand van de 4 dichstbijzijnde pixels. 
-Hoever de 4 pixels om de (nog uit te rekenen) pixel staat geeft aan hoeveel hun waardes wegen. 
+Waar de Nearest-Neighbor Interpolation alleen kijkt naar de dichtsbijzijnde pixel en zijn waarde overneemt, kijkt de Bilinear manier naar de afstand van de 4 dichstbijzijnde pixels.  
+
+De afstand word gebruikt voor de weging van zijn intensiteit (Die altijd optellen naar 1 totaal). Uiteindelijk worden alle kleuren bij elkaar opgeteld gebaseerd op de weginging en word daar het gemiddelde uit gehaald. 
+
+Hierdoor krijg je een evenwichtiger effect wanneer je een afbeelding vergoot. Er onstaat en wat normalere overgang en het gaat kartel randen tegen (aliasing).
+
+![alt text](https://i.imgur.com/y6RGjPn.png "Vergroten met Bilinear Interpolatie").
 
 
 
 ### 2.3 Bicubic Interpolation
+![alt text](https://wiki.blender.org/uploads/c/c6/Bicubic_scale_node.gif "Grid van Bicubic Interpolatie")
+
 Deze methode werkt hetzelfde als de Bilinear Interpolation. Het verschil zit hem echter in de hoeveelheid pixels er worden bekenen. Bij de Bilinear interplotie worden de pixels bekeken bij een 2x2 grid. Met de Bicubic wordt er gekeken naar een 4x4 grid. Totaal 16 pixels.
 
-### 2.4 Honorable Mentions
+Hierdoor onstaan er  evenwichtere overgangen dan bij bilinear maar, het kost ook meer tijd om de nieuwe afbeelding te maken.
+
+### 2.4 Lanczos Resampling
+
+
+
+### 2.5 Honorable Mentions
 De bovenstaande methoden zullen geimplementeerd worden, maar er zijn nog veel meer methoden. Deze staan hieronder beschreven met daarbij de reden waarom deze niet wordt meegenomen. 
 
-
-#### 2.4.1 Sinc and Lancoz Resampling
-Sinc resampling 
-
-
-#### 2.4.2 Vectorizing 
-Met deze methode worden wordt de afbeelding omgezet in (niet resolutie gebonden) vectors voor schaling. Het is een goede methode voor simpele geometrische afbeeldingen. Helaas zorgt deze methoden er veel voor dat er veel details verloren gaan (zie afbeelding hieronder)
+#### 2.5.2 Vectorizing 
+Met deze methode worden wordt de afbeelding omgezet in (niet resolutie gebonden) vectors voor schaling. Het is een goede methode voor simpele geometrische afbeeldingen. Helaas zorgt deze methoden er veel voor dat er veel details verloren gaan (zie afbeelding hieronder).
 
 ![alt text](https://i.imgur.com/hiAKpCL.png "Werking van Nearest Neighbour Image Scaling")
 
+Deze methode werkt goed voor simpele geometrische vormen maar niet goed voor foto's. Vanwege deze reden hebben we er voor gekozen om deze niet te implementeren. 
 
+#### 2.5.3 Box Sampling
+Een van de zwakte van de bovenstaanden methodes is dat wanneer je een afbeelding kleiner maakt onder een bepaalde drempelwaarde, zullen de methoden niet aangrenzende pixels meenemen in de calculatie waardoor je veel data verlies krijgt.
 
-#### 2.4.3 Mipmap
+De eventuele oplossing hiervoor zou zijn dat je altijd een soort "doosbemonstering" uitvoert. Hierdoor kies je een bepaald gebied van de afbeelding waar je alle waardes van de pixels meetelt.
 
-#### 2.4.4 Box Sampling
-
-
+Waarom nemen wij deze niet mee in ons practica? Het is namelijk erg moeilijk om een goed resultaat te krijgen. Er zijn veel randwaarden zoals, hoe groot is het gebied wat ik sample? Heeft alles dezelfde weging of maak ik daar onderscheid in? etc. 
 
 ## 3. Implementatie
+
+### 3.1 Nearest-Neighbor Interpolation
+```C++
+
+```
+
+### 3.2 Bilinear Interpolation
+
+### 3.3 Bicubic Interpolation
+
+### 3.4 Lanczos Resampling
+
+
+
+## 4. Hypothesis
+
 
 ## 4. Evaluatie 
 
