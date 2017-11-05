@@ -10,10 +10,51 @@ Het op schaal brengen van een afbeelding is een belangrijk onderdeel van de pre-
 
 ____________
 
+## TODO
+
+Implementatie Plan
+- [x] Doel
+- [x] Methoden
+	- [x] Mapping
+		- [x] Foward Mapping
+		- [x] Backward Mapping
+		- [x] Gebruikte Mapping Methode
+	- [x] Nearest-Neighbor Interpolation
+	- [ ] Bilinear Interpolation
+	- [ ] Bicubic Interpolation
+	- [ ] Lanczos Resampling
+	- [ ] Honorable Mentions
+		- [ ] Diverse
+- [ ] Implementatie
+	- [ ] Nearest-Neighbor Interpolation
+	- [ ] Bilinear Interpolation
+	- [ ] Bicubic Interpolation
+	- [ ] Lanczos Resampling
+- [ ] Evaluatie
+
+
 Implementatie's 
 - [x] Nearest-Neighbor Interpolation
-- [ ] Bilinear Algorithm
-- [ ] Bicubic Algorithm
+- [x] Bilinear Algorithm
+- [x] Bicubic Algorithm
 - [ ] Lanczos Resampling
-- [ ] Box Sampling
-- [ ] Fourier Transform methods
+
+Meetrapporten
+- [ ] Snelheid 
+	- [ ] Inleiding
+	- [ ] Hypothese
+	- [ ] Methoden
+	- [ ] Resultaten
+	- [ ] Conclusie
+- [ ] Kwaliteit van scaling
+	- [ ] Inleiding
+	- [ ] Hypothese
+	- [ ] Methoden
+	- [ ] Resultaten
+	- [ ] Conclusie
+- [ ] Integratie
+	- [ ] Inleiding
+	- [ ] Hypothese
+	- [ ] Methoden
+	- [ ] Resultaten
+	- [ ] Conclusie
