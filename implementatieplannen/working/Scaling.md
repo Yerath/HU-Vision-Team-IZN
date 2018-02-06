@@ -11,8 +11,11 @@ ____________
 Het op schaal brengen van een afbeelding is een belangrijk onderdeel van de pre-processing. Het is belangrijk dat alle invoerafbeeldingen, voor sommige programma’s, voordoen aan dezelfde criteria, denk hier over formaat, zwart-wit, edge detected, etc.
 
 ## 1. Doel
-Voor het bewerken van een afbeelding is het belangrijk dat de afbeelding aan de alle invoerafbeeldingen voldoen aan dezelfde cirteria. In deze pre-processing fase zal er scaling uitgevoerd moeten worden. Voor het programma dient een afbeelding vergroot te worden (upscaling), maar ook verkleint worden (downscaling). Daarom moet de methode die geimplementeerd wordt, dit beide kunnen. 
+Voor het bewerken van een afbeelding is het belangrijk dat de afbeelding aan de alle invoerafbeeldingen voldoen aan dezelfde cirteria. In deze pre-processing fase zal er scaling uitgevoerd moeten worden. Voor het programma dient een afbeelding vergroot te worden (upscaling), maar ook verkleint worden (downscaling). Daarom moet de methode die geimplementeerd wordt, dit beide kunnen. Echter zijn er drie belangrijke factoren waarop een algoritme gekozen kan worden voor scaling.
 
+- Snelheid
+- Kwaliteit van de Afbeelding
+- Integratie met Arno's algoritme
 
 ## 2. Methoden
 
@@ -70,10 +73,6 @@ Deze methode werkt hetzelfde als de Bilinear Interpolation. Het verschil zit hem
 
 Hierdoor onstaan er  evenwichtere overgangen dan bij bilinear maar, het kost ook meer tijd om de nieuwe afbeelding te maken.
 
-### 2.4 Lanczos Resampling
-
-
-
 ### 2.5 Honorable Mentions
 De bovenstaande methoden zullen geimplementeerd worden, maar er zijn nog veel meer methoden. Deze staan hieronder beschreven met daarbij de reden waarom deze niet wordt meegenomen. 
 
@@ -102,12 +101,6 @@ Waarom nemen wij deze niet mee in ons practica? Het is namelijk erg moeilijk om 
 
 ### 3.3 Bicubic Interpolation
 
-### 3.4 Lanczos Resampling
-
-
-
-## 4. Hypothesis
-
 
 ## 4. Evaluatie 
-
+Om tot de conclusie te komen of de scaling methoden werken en ook te kijken welke de beste keuze is, zullen er metingen gedaan moeten worden. Hierbij moet de snelheid vergeleken worden met diverse schaalfactoren, kwaliteit vergeleken worden en intergratie getest worden. Zo krijgen we een duidelijk beeld welk algoritme werkt met Arno zijn gezichtdetectie en welk algorimte welk resultaat levert.
