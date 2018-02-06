@@ -94,13 +94,59 @@ Waarom nemen wij deze niet mee in ons practica? Het is namelijk erg moeilijk om 
 
 ### 3.1 Nearest-Neighbor Interpolation
 ```C++
+While next vericle pixel not last pixel
+	While next horizontal pixel not last pixel
+		set near vericle pixel = vericle pixel * source pixsel / size destination
+		set near horizontal pixel = horizontal pixel * source pixsel / size destination
 
+		pixel vericle and horizontal = source near vericle pixel and near horizontal pixel
+	endWhile
+endWhile
 ```
 
 ### 3.2 Bilinear Interpolation
+```C++
+While next vericle pixel not last pixel
+	While next horizontal pixel not last pixel
 
+		set near vericle pixel = vericle pixel * source pixsel / size destination
+		set near horizontal pixel = horizontal pixel * source pixsel / size destination
+
+		pixel 1 = 1 pixel up near vericle pixel and near horizontal pixel
+		pixel 2 = 1 pixel left near vericle pixel and near horizontal pixel
+		pixel 3 = 1 pixel right near vericle pixel and near horizontal pixel
+		pixel 4 = 1 pixel down near vericle pixel and near horizontal pixel
+
+		pixel prox 1 = lijn tussen pixel 1 en pixel 2
+		pixel prox 2 = lijn tussen pixel 3 en pixel 4
+		pixel prox 3 = lijn tussen pixel prox 1  en pixel 3
+
+		pixel vericle and horizontal = pixel prox 3 
+	endWhile
+endWhile
+```
 ### 3.3 Bicubic Interpolation
+```C++
+While next vericle pixel not last pixel
+	While next horizontal pixel not last pixel
 
+		set near vericle pixel = vericle pixel * source pixsel / size destination
+		set near horizontal pixel = horizontal pixel * source pixsel / size destination
+
+		point10 = pixel 1 = 1 pixel up near vericle pixel and near horizontal pixel
+		... repeat 15 more times til rid around the source pixel
+
+		colum 1 = take 4 pixels form the rid and check which is closer to the desired pixel 
+                   and calculate based on that a wight per pixel
+		... repeat an other 3 times
+
+		value = take the results for the 4 desired and also check which is closer to the desired pixel  
+                  and calculate based on that a wight per pixel.
+
+		pixel vericle and horizontal = value
+	endWhile
+endWhile
+```
 
 ## 4. Evaluatie 
 Om tot de conclusie te komen of de scaling methoden werken en ook te kijken welke de beste keuze is, zullen er metingen gedaan moeten worden. Hierbij moet de snelheid vergeleken worden met diverse schaalfactoren, kwaliteit vergeleken worden en intergratie getest worden. Zo krijgen we een duidelijk beeld welk algoritme werkt met Arno zijn gezichtdetectie en welk algorimte welk resultaat levert.
